@@ -153,20 +153,6 @@ The app will be live at `http://localhost:3000`.
 | `GET` | `/api/analysis/status/{job_id}` | Poll job status and retrieve results |
 | `GET` | `/api/analysis/explain/{job_id}?file_path=...` | Get AI deep-dive for a specific file |
 
-## ⚠️ Important Notes
-
-> **API Keys** — Never commit real API keys. The `backend/.env` file is listed in `.gitignore`. Each collaborator must create their own `.env` with their own Gemini key.
-
-> **`google-generativeai` deprecation** — The backend currently uses the `google-generativeai` package which is deprecated in favour of `google-genai`. It still works but a migration is planned.
-
-> **In-memory job storage** — Analysis results are stored in a Python dictionary for the lifetime of the server process. Restarting the backend clears all jobs. For production, use Redis or a database.
-
-> **Public repos only** — The `/clone` endpoint only accepts `https://github.com/` URLs and will clone them without authentication. Private repos are not supported.
-
-## 🚀 Deployment
-
-- **Frontend** — Deploy to [Vercel](https://vercel.com/) (zero config for Next.js). Set `NEXT_PUBLIC_API_URL` to your backend's deployed URL.
-- **Backend** — Deploy to [Railway](https://railway.app/), [Render](https://render.com/), or any platform that supports Python. Set `GEMINI_API_KEY` as an environment variable.
 
 ## 📜 License
 
